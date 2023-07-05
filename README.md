@@ -11,6 +11,7 @@ This is a log of installation steps to set up Arch on my machine; as well as my 
     - [Install AUR Helper](#install-aur-helper)
     - [Update NV Driver](#update-nv-driver)
     - [Replace i3 with Hyprland](#replace-i3-with-hyprland)
+    - [Install NetworkManager](#install-networkmanager)
   - [User Setup](#user-setup)
     - [Install Resource Tracker](#install-resource-tracker)
     - [Install Browser](#install-browser)
@@ -26,12 +27,11 @@ This is a log of installation steps to set up Arch on my machine; as well as my 
     - [GTK Settings Editor](#gtk-settings-editor)
     - [Removable Media \& Mounting Support](#removable-media--mounting-support)
   - [Dotfiles Config Setup](#dotfiles-config-setup)
+    - [Install GTK Theme (Catpuccin)](#install-gtk-theme-catpuccin)
     - [Configure WM (hyprland)](#configure-wm-hyprland)
     - [Configure Bar (waybar)](#configure-bar-waybar)
-  - [Install Some Fonts](#install-some-fonts)
-  - [Install GTK Theme (Catpuccin)](#install-gtk-theme-catpuccin)
-  - [Get a Bar Going](#get-a-bar-going)
-  - [Import dotfiles](#import-dotfiles)
+    - [Install Zsh (our configs rely on this).](#install-zsh-our-configs-rely-on-this)
+  - [Deploy the Configurations](#deploy-the-configurations)
   - [Maintenance](#maintenance)
     - [Copy Dotfiles from Current User to Repo](#copy-dotfiles-from-current-user-to-repo)
 
@@ -182,6 +182,13 @@ pacman -S qt6-wayland
 
 Reboot.
 
+### Install NetworkManager
+
+```
+pacman -S networkmanager
+pacman -S nm-connection-editor
+```
+
 ## User Setup 
 
 ### Install Resource Tracker
@@ -200,6 +207,7 @@ pacman -S vivaldi
 
 ```bash
 pacman -S neofetch
+pacman -S imagemagick # thumbnails
 ```
 
 ### Audio Management
@@ -238,14 +246,14 @@ piper
 ### File Managers
 
 ```bash
-yay -S thunar 
+yay -S thunar tumbler ffmpegthumbnailer # tumbler for thumbs
 pacman -S ranger # optional
 ```
 
 ### Fix Screen Capture on Chrome
 
 ```bash
-pacman -S xdg-desktop-portal-wlr
+pacman -S xdg-desktop-portal-hyprland
 
 # Update Config
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
@@ -279,8 +287,17 @@ yay -S gvfs
 
 RGBA
 
-- Accent: #00ff99ee `(Up/Blue)`
-- Accent 2: #33ccffee `(Down/Green)`
+- Accent A: #00ff99ee `(Down/Green)`
+- Accent B: #33ccffee `(Up/Blue)`
+
+- Accent A Lighter: #a9ceb5
+- Accent B Lighter: #a2cce0
+
+### Install GTK Theme (Catpuccin)
+
+```bash
+yay -S catppuccin-gtk-theme-mocha catppuccin-gtk-theme-macchiato catppuccin-gtk-theme-frappe catppuccin-gtk-theme-latte papirus-icon-theme gtk-engine-murrine
+```
 
 ### Configure WM (hyprland)
 
@@ -347,32 +364,41 @@ Lock Screen:
 yay -S swaylock-effects
 ```
 
+Wallpaper: 
+
+```bash
+# .config/hypr/hyprpaper.conf 
+pacman -S hyprpaper
+```
+
 ### Configure Bar (waybar)
 
-## Install Some Fonts
-
 ```bash
-yay -S ttf-font-awesome ttf-jetbrains-mono ttf-icomoon-feather
-```
-
-## Install GTK Theme (Catpuccin)
-
-```bash
-yay -S catppuccin-gtk-theme-mocha catppuccin-gtk-theme-macchiato catppuccin-gtk-theme-frappe catppuccin-gtk-theme-latte papirus-icon-theme gtk-engine-murrine
-```
-
-## Get a Bar Going
-
-```bash
+# .config/hypr/bar.conf
 yay -S waybar-hyprland-git
+
+# Needed Fonts
+yay -S ttf-font-awesome ttf-jetbrains-mono ttf-icomoon-feather ttf-iosevka-nerd ttf-iosevka
+
+# Needed Applet
+yay -S nm-connection-editor
 ```
 
-## Import dotfiles
+Note: The `music` component on the bar doesn't have wired up buttons, for now it only responds to left/middle/right click.
 
-Copy the dotfiles to your home dir:
+### Install Zsh (our configs rely on this).
+
+```zsh
+pacman -S zsh
+```
+
+## Deploy the Configurations
+
+Copies the dotfiles, makes zsh default shell, changes shell to zsh:
 
 ```bash
-cp -R ./.config/* $HOME/.config
+chmod +x ./deploy.sh
+deploy.sh
 ```
 
 ## Maintenance

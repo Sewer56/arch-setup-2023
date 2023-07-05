@@ -1,17 +1,17 @@
 * {
     border: none;
     border-radius: 0px;
-    /*font-family: VictorMono, Iosevka Nerd Font, Noto Sans CJK;*/
-    font-family: Iosevka, FontAwesome, Noto Sans CJK;
+    font-family: VictorMono, Iosevka Nerd Font, Noto Sans CJK;
+    /*font-family: Iosevka, FontAwesome, Noto Sans CJK;*/
     font-size: 14px;
     font-style: normal;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(30, 30, 46, 0.5);
+    background: rgba(30, 30, 46, 0.7);
     border-bottom: 1px solid #282828;
-    color: #f4d9e1
+    color: #a2cce0
 }
 
 #workspaces {
@@ -19,7 +19,7 @@ window#waybar {
 	margin: 5px 5px 5px 5px;
   padding: 0px 5px 0px 5px;
 	border-radius: 16px;
-  border: solid 0px #f4d9e1;
+  border: solid 0px #a2cce0;
   font-weight: normal;
   font-style: normal;
 }
@@ -30,13 +30,13 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: #f4d9e1;
+    color: #a2cce0;
     background-color: transparent;
     border-radius: 16px;
 }
 
 #workspaces button:hover {
-	background-color: #E6B9C6;
+	background-color: #a9ceb5;
 	color: black;
 	border-radius: 16px;
 }
@@ -46,7 +46,7 @@ window#waybar {
 	padding: 5px 5px 5px 5px;
 	margin: 5px 5px 5px 5px;
   border-radius: 8px;
-  border: solid 0px #f4d9e1;
+  border: solid 0px #a2cce0;
 }
 
 #custom-date {
@@ -73,7 +73,7 @@ window#waybar {
 }
 
 #clock {
-    color: #E6B9C6;
+    color: #a9ceb5;
     background-color: #282828;
     border-radius: 0px 0px 0px 24px;
     padding-left: 13px;
@@ -112,13 +112,13 @@ window#waybar {
 }
 
 #network {
-    color: #f4d9e1;
+    color: #a2cce0;
     border-radius: 8px;
     margin-right: 5px;
 }
 
 #pulseaudio {
-    color: #f4d9e1;
+    color: #a2cce0;
     border-radius: 8px;
     margin-left: 0px;
 }
@@ -131,13 +131,13 @@ window#waybar {
 }
 
 #custom-randwall {
-    color: #f4d9e1;
+    color: #a2cce0;
     border-radius: 8px;
     margin-right: 0px;
 }
 
 #custom-launcher {
-    color: #e5809e;
+    color: #00ff99;
     background-color: #282828;
     border-radius: 0px 24px 0px 0px;
     margin: 0px 0px 0px 0px;
@@ -156,6 +156,7 @@ window#waybar {
 
 #custom-playerctl {
 	background: #282828;
+    color: #a2cce0;
 	padding-left: 15px;
   padding-right: 14px;
 	border-radius: 16px;
@@ -197,13 +198,13 @@ window#waybar {
 
 #custom-wf-recorder {
     padding: 0 20px;
-    color: #e5809e;
+    color: #00ff99;
     background-color: #1E1E2E;
 }
 
 #cpu {
     background-color: #282828;
-    /*color: #FABD2D;*/
+    color: #a9ceb5;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -214,7 +215,7 @@ window#waybar {
 
 #memory {
     background-color: #282828;
-    /*color: #83A598;*/
+    color: #a9ceb5;
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;

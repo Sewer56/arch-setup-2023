@@ -11,13 +11,12 @@
     "modules-right": ["tray", "custom/randwall", "network", "pulseaudio", "clock"],
     // Modules configuration
 	"clock": {
-		"format": " {:%H:%M}",
+		"format": "<big></big>  {:%H:%M}",
 		"tooltip": "true",
         	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        	"format-alt": " {:%d/%m}"
+        	"format-alt": "<big></big>  {:%d/%m}"
 	},
 	
-
 	"wlr/workspaces": {
         "active-only": false,
         "all-outputs": true,
@@ -32,9 +31,9 @@
 //			"3": "三",
 //			"4": "四",
 //			"5": "五",
-			"urgent": "",
-			"active": "",
-			"default": "󰧞",
+			"urgent": "<big></big>",
+			"active": "<big></big>",
+			"default": "<big>󰧞</big>",
     "sort-by-number": true
     },
     },
@@ -48,8 +47,8 @@
       "on-click": "playerctl previous",
       "on-click-right": "playerctl next",
       "format-icons": {
-        "Playing": "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>",
-        "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
+        "Playing": "<span foreground='#a2cce0'><big>󰒮  󰐌   󰒭</big></span>",
+        "Paused": "<span foreground='#928374'><big>󰒮  󰏥   󰒭</big></span>"
       },
     },
 
@@ -89,24 +88,24 @@
   },
 
   "cpu": {
-    "format": "󰻠 {usage}%",
+    "format": "<big>󰻠</big> {usage}%",
     "format-alt": "󰻠 {avg_frequency} GHz",
     "interval": 5
   },
 
   "disk": {
-    "format": "󰋊 {}%",
-    "format-alt": "󰋊 {used}/{total} GiB",
+    "format": "<big>󰋊</big> {}%",
+    "format-alt": "<big>󰋊</big> {used}/{total} GiB",
     "interval": 5,
     "path": "/mnt/Datos"
   },
 	
 	"network": {
-        	"format-wifi": "󰤨",
-        	"format-ethernet": " {ifname}: Aesthetic",
-        	"format-linked": " {ifname} (No IP)",
-        	"format-disconnected": "󰤭",
-        	"format-alt": " {ifname}: {ipaddr}/{cidr}",
+        	"format-wifi": "<big>󰤨</big>",
+        	"format-ethernet": "<big></big> Aesthetic",
+        	"format-linked": "<big></big> (No IP)",
+        	"format-disconnected": "<big>󰤭</big>",
+        	"format-alt": "<big></big> {ipaddr}/{cidr}",
           "tooltip-format": "{essid}",
           "on-click-right": "nm-connection-editor"
 	},
@@ -119,48 +118,39 @@
 	"backlight": {
         // "device": "acpi_video1",
 	"format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "format-icons": ["<big></big>", "<big></big>", "<big></big>", "<big></big>", "<big></big>", "<big></big>", "<big></big>", "<big></big>", "<big></big>"],
 //	"on-scroll-up":,
 //	"on-scroll-down":,
 	},
 
 	"pulseaudio": {
 		"format": "{icon} {volume}%",
-        	"format-muted": "󰝟",
+        	"format-muted": "<big>󰝟</big>",
 		"format-icons": {
-			"default": ["󰕿", "󰖀", "󰕾"]
+			"default": ["<big>󰕿</big>", "<big>󰖀</big>", "<big>󰕾</big>"]
 		},
-		"on-click": "bash ~/.scripts/volume mute",
-    "on-scroll-up": "bash ~/.scripts/volume up",
-    "on-scroll-down": "bash ~/.scripts/volume down",
+		"on-click": "bash ~/.config/hypr/scripts/mute.sh",
+    "on-scroll-up": "bash ~/.config/hypr/scripts/volume_up.sh",
+    "on-scroll-down": "bash ~/.config/hypr/scripts/volume_down.sh",
     "scroll-step": 5,
 		"on-click-right": "pavucontrol"
   },
   "custom/randwall": {
-    "format": "󰏘",
+    "format": "<big>󰏘</big>",
     "on-click": "bash $HOME/.config/hypr/randwall.sh",
-    "on-click-right": "bash $HOME/.config/hypr/wall.sh"
+    "on-click-right": "bash $HOME/.config/hypr/wall.sh",
+    "tooltip": "Left Click for Random Wall, Right Click for Default Wall"
   },
   "custom/launcher": {
-    "format": "󰈸",
-    "on-click": "bash $HOME/.config/rofi/launcher.sh",
+    "format": "<big>󰈸</big>",
+    "on-click": "killall rofi || rofi -show drun -theme ~/.config/rofi/config.rasi"
 //    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",
-    "on-click-right": "bash $HOME/.config/rofi/run.sh"  
+//    "on-click-right": "bash $HOME/.config/rofi/run.sh"  
 //    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css"  
   },
 
-  "custom/wf-recorder": {
-		"format": "{}",
-		"interval": "once",
-		"exec": "echo ''",
-		"tooltip": "false",
-		"exec-if": "pgrep 'wf-recorder'",
-		"on-click": "exec ./scripts/wlrecord.sh",
-		"signal": 8
-	},
-
   "custom/hyprpicker": {
-    "format": "󰈋",
+    "format": "<big>󰈋</big>",
     "on-click": "hyprpicker -a -f hex",
     "on-click-right": "hyprpicker -a -f rgb"
   },
