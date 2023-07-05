@@ -30,7 +30,7 @@ This is a log of installation steps to set up Arch on my machine; as well as my 
     - [Install GTK Theme (Catpuccin)](#install-gtk-theme-catpuccin)
     - [Configure WM (hyprland)](#configure-wm-hyprland)
     - [Configure Bar (waybar)](#configure-bar-waybar)
-    - [Install Zsh (our configs rely on this).](#install-zsh-our-configs-rely-on-this)
+    - [Install Oh My Zsh.](#install-oh-my-zsh)
   - [Deploy the Configurations](#deploy-the-configurations)
   - [Maintenance](#maintenance)
     - [Copy Dotfiles from Current User to Repo](#copy-dotfiles-from-current-user-to-repo)
@@ -386,10 +386,12 @@ yay -S nm-connection-editor
 
 Note: The `music` component on the bar doesn't have wired up buttons, for now it only responds to left/middle/right click.
 
-### Install Zsh (our configs rely on this).
+### Install Oh My Zsh.
 
 ```zsh
 pacman -S zsh
+
+# We will import Oh My Zsh through a script.
 ```
 
 ## Deploy the Configurations
