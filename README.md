@@ -263,7 +263,21 @@ piper
 ### File Managers
 
 ```bash
-yay -S thunar tumbler ffmpegthumbnailer # tumbler for thumbs
+yay -S thunar # tumbler for thumbs
+yay -S polkit-gnome # Required for auth which is required for mounting drives
+yay -S thunar-archive-plugin # archive files
+yay -S thunar-media-tags-plugin # id3 tags
+yay -S tumbler-extra-thumbnailers # dds and some other useful stuff
+yay -S f3d # application for previewing models
+
+# Extensions
+yay -S tumbler # Thumbnails
+yay -S webp-pixbuf-loader # webp
+yay -S ffmpegthumbnailer # videos
+yay -S poppler-glib # .pdf
+yay -S freetype2 # .pdf
+
+# CLI
 pacman -S ranger # optional
 ```
 
@@ -274,12 +288,6 @@ pacman -S xdg-desktop-portal-hyprland
 
 # Update Config
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-```
-
-### Auth Agent
-
-```bash
-pacman -S polkit-kde-agent
 ```
 
 ### Archive Manager (Optional)
@@ -382,15 +390,27 @@ Wallpaper:
 pacman -S hyprpaper
 ```
 
-Auto Mount Storage Devices:
+Mounting & Storage Devices:
 
 ```bash
-# .config/hypr/automount.conf
-# Uses udiskie.
-yay -S gvfs
-yay -S ntfs-3g # ntfs support
+# Prereqs
 yay -S polkit  # for mounting as user, you'll have this already if you have auth agent
-yay -S udiskie # automount daemon
+
+# Automount
+# .config/hypr/automount.conf
+yay -S udiskie # daemon
+
+# Mount
+# .config/hypr/mount.conf
+yay -S polkit-gnome # requisite
+
+# File System Support
+yay -S ntfs-3g  # ntfs support
+yay -S ntfs-3g-system-compression # 'compact-os' support
+
+# File Manager Support
+yay -S gvfs
+yay -S gvfs-mtp # Android/MTP Support
 ```
 
 ### Configure Bar (waybar)
