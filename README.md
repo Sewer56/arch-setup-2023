@@ -294,12 +294,6 @@ yay -S file-roller
 yay -S nwg-look
 ```
 
-### Removable Media & Mounting Support
-
-```bash
-yay -S gvfs
-```
-
 ## Dotfiles Config Setup
 
 RGBA
@@ -386,6 +380,17 @@ Wallpaper:
 ```bash
 # .config/hypr/hyprpaper.conf 
 pacman -S hyprpaper
+```
+
+Auto Mount Storage Devices:
+
+```bash
+# .config/hypr/automount.conf
+# Uses udiskie.
+yay -S gvfs
+yay -S ntfs-3g # ntfs support
+yay -S polkit  # for mounting as user, you'll have this already if you have auth agent
+yay -S udiskie # automount daemon
 ```
 
 ### Configure Bar (waybar)
