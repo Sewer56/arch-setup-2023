@@ -119,7 +119,16 @@ Must enable direct rendering manager in kernel params (`systemd-boot` instructio
 nano /boot/loader/entries/...conf
 ```
 
-Add `nvidia_drm.modeset=1` to options, and while we're at it, disable mitigations `mitigations=off`
+Add the following to options:
+- `nvidia_drm.modeset=1` (needed for Wayland)
+- `NVreg_PreserveVideoMemoryAllocations=1` (needed for suspend in Wayland)
+- `mitigations=off` (optional, sacrifices security for perf)
+
+Line should look something like:
+
+```
+options /* some stuff here */ nvidia_drm.modeset=1 mitigations=off nvidia.
+```
 
 And rebuild dkms...
 
@@ -130,6 +139,14 @@ dkms autoinstall
 And just in case...
 ```bash
 mkinitcpio # also verify with --automods
+```
+
+And enable the services needed for suspend:
+
+```
+systemctl enable nvidia-suspend
+systemctl enable nvidia-resume
+systemctl enable nvidia-hibernate
 ```
 
 ### Replace i3 with Hyprland
