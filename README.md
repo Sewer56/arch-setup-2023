@@ -423,10 +423,6 @@ yay -S udiskie # daemon
 # .config/hypr/mount.conf
 yay -S polkit-gnome # requisite
 
-# File System Support
-yay -S ntfs-3g  # ntfs support
-yay -S ntfs-3g-system-compression # 'compact-os' support
-
 # File Manager Support
 yay -S gvfs
 yay -S gvfs-mtp # Android/MTP Support
