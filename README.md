@@ -424,6 +424,9 @@ yay -S ttf-font-awesome ttf-jetbrains-mono ttf-icomoon-feather ttf-iosevka-nerd 
 
 # Needed Applet
 yay -S nm-connection-editor
+
+# Needed for auto reload.
+yay -S inotify-tools
 ```
 
 Note: The `music` component on the bar doesn't have wired up buttons, for now it only responds to left/middle/right click.
