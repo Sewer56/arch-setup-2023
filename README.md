@@ -102,7 +102,7 @@ cd yay
 makepkg -si
 ```
 
-### Update NV Driver
+### Update NV Driver & Setup Kernel Params
 
 If you're stuck with prioprietary driver like me, it's kinda sad.  
 This repo has some extra fixes.  
@@ -123,6 +123,7 @@ Add the following to options:
 - `nvidia_drm.modeset=1` (needed for Wayland)
 - `NVreg_PreserveVideoMemoryAllocations=1` (needed for suspend in Wayland)
 - `mitigations=off` (optional, sacrifices security for perf)
+- `mem_sleep_default=deep` (necessary on my Ryzen system for machine to wake up after long sleep)
 
 Line should look something like:
 
@@ -258,6 +259,24 @@ systemctl start ckb-next-daemon
 ```bash
 pacman -S piper
 piper
+```
+
+### Configure Swap
+
+```bash
+# https://wiki.archlinux.org/title/Zram#:~:text=zram%2C%20formerly%20called%20compcache%2C%20is,a%20general-purpose%20RAM%20disk.
+# Disable zswap if needed first.
+pacman -S zram-generator # might be already insatalled depending on archinstall config
+
+# Open
+sudo nano /etc/systemd/zram-generator.conf
+zram-size = ram
+compression-algorithm = zstd
+swap-priority = 100
+fs-type = swap
+
+# Enable
+systemctl enable systemd-zram-setup@zram0.service
 ```
 
 ### File Managers
