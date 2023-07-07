@@ -426,6 +426,9 @@ yay -S polkit-gnome # requisite
 # File Manager Support
 yay -S gvfs
 yay -S gvfs-mtp # Android/MTP Support
+
+# SSD Trim (might already be enabled)
+systemctl enable fstrim.timer
 ```
 
 ### Configure Bar (waybar)
