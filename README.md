@@ -25,6 +25,7 @@ This is a log of installation steps to set up Arch on my machine; as well as my 
     - [Fix Screen Capture on Chrome](#fix-screen-capture-on-chrome)
     - [Archive Manager (Optional)](#archive-manager-optional)
     - [GTK Settings Editor](#gtk-settings-editor)
+    - [Autologin](#autologin)
   - [Dotfiles Config Setup](#dotfiles-config-setup)
     - [Install GTK Theme (Catpuccin)](#install-gtk-theme-catpuccin)
     - [Configure WM (hyprland)](#configure-wm-hyprland)
@@ -323,6 +324,23 @@ yay -S file-roller
 
 ```bash
 yay -S nwg-look
+```
+
+### Autologin
+
+```bash
+sudo mkdir /etc/systemd/system/getty@tty1.service.d/
+sudo nano /etc/systemd/system/getty@tty1.service.d/override.conf
+```
+
+```
+[Service]
+ExecStart=
+ExecStart=-/usr/bin/agetty --autologin sewer --noclear %I $TERM
+```
+
+```
+sudo systemctl enable getty@tty1.service
 ```
 
 ## Dotfiles Config Setup
