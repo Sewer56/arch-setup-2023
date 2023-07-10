@@ -9,7 +9,7 @@ This is a log of installation steps to set up Arch on my machine; as well as my 
     - [Install Text Editor](#install-text-editor)
     - [Fix DPI](#fix-dpi)
     - [Install AUR Helper](#install-aur-helper)
-    - [Update NV Driver](#update-nv-driver)
+    - [Update NV Driver \& Setup Kernel Params](#update-nv-driver--setup-kernel-params)
     - [Replace i3 with Hyprland](#replace-i3-with-hyprland)
     - [Install NetworkManager](#install-networkmanager)
   - [User Setup](#user-setup)
@@ -20,12 +20,11 @@ This is a log of installation steps to set up Arch on my machine; as well as my 
     - [Install IDE (.NET)](#install-ide-net)
     - [Keyboard Lighting (Corsair)](#keyboard-lighting-corsair)
     - [Mouse Config (Universal)](#mouse-config-universal)
+    - [Configure Swap](#configure-swap)
     - [File Managers](#file-managers)
     - [Fix Screen Capture on Chrome](#fix-screen-capture-on-chrome)
-    - [Auth Agent](#auth-agent)
     - [Archive Manager (Optional)](#archive-manager-optional)
     - [GTK Settings Editor](#gtk-settings-editor)
-    - [Removable Media \& Mounting Support](#removable-media--mounting-support)
   - [Dotfiles Config Setup](#dotfiles-config-setup)
     - [Install GTK Theme (Catpuccin)](#install-gtk-theme-catpuccin)
     - [Configure WM (hyprland)](#configure-wm-hyprland)
@@ -123,7 +122,6 @@ Add the following to options:
 - `nvidia_drm.modeset=1` (needed for Wayland)
 - `NVreg_PreserveVideoMemoryAllocations=1` (needed for suspend in Wayland)
 - `mitigations=off` (optional, sacrifices security for perf)
-- `mem_sleep_default=deep` (necessary on my Ryzen system for machine to wake up after long sleep)
 
 Line should look something like:
 
@@ -148,6 +146,12 @@ And enable the services needed for suspend:
 systemctl enable nvidia-suspend
 systemctl enable nvidia-resume
 systemctl enable nvidia-hibernate
+```
+
+Then blacklist nouveau
+
+```
+sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf" && sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 ```
 
 ### Replace i3 with Hyprland
