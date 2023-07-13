@@ -28,6 +28,7 @@ This is a log of installation steps to set up Arch on my machine; as well as my 
     - [Autologin](#autologin)
     - [Hex Editor](#hex-editor)
     - [Docker](#docker)
+    - [Mount Cloud Storage](#mount-cloud-storage)
   - [Dotfiles Config Setup](#dotfiles-config-setup)
     - [Install GTK Theme (Catpuccin)](#install-gtk-theme-catpuccin)
     - [Configure WM (hyprland)](#configure-wm-hyprland)
@@ -365,6 +366,19 @@ yay -S docker
 systemctl enable docker.service
 ```
 
+### Mount Cloud Storage
+
+```
+pacman -S rclone
+rclone config
+
+# Mount that service
+mkdir ~/Cloud
+
+# Mount command in 
+# .config/hypr/cloud.conf
+```
+
 ## Dotfiles Config Setup
 
 RGBA
@@ -481,6 +495,12 @@ Clipboard Manager:
 pacman -S clipmenu
 
 #.config/hypr/clipboard.conf
+```
+
+Disable/Enable Cloud:
+
+```bash
+# .config/hypr/cloud.conf
 ```
 
 ### Configure Bar (waybar)
