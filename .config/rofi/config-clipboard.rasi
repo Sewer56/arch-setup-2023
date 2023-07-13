@@ -1,0 +1,5 @@
+@theme "config"
+
+* {
+    width: 1600;
+}

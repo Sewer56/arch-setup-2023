@@ -475,6 +475,14 @@ yay -S gvfs-mtp # Android/MTP Support
 systemctl enable fstrim.timer
 ```
 
+Clipboard Manager:
+
+```bash
+pacman -S clipmenu
+
+#.config/hypr/clipboard.conf
+```
+
 ### Configure Bar (waybar)
 
 ```bash
