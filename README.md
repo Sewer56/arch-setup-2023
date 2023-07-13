@@ -27,6 +27,7 @@ This is a log of installation steps to set up Arch on my machine; as well as my 
     - [GTK Settings Editor](#gtk-settings-editor)
     - [Autologin](#autologin)
     - [Hex Editor](#hex-editor)
+    - [Docker](#docker)
   - [Dotfiles Config Setup](#dotfiles-config-setup)
     - [Install GTK Theme (Catpuccin)](#install-gtk-theme-catpuccin)
     - [Configure WM (hyprland)](#configure-wm-hyprland)
@@ -356,6 +357,13 @@ Sometimes it fails in Wayland, x11 mode will work, edit:
 - `~/.local/share/applications/010editor-import.desktop`  
 
 And prepend `env QT_QPA_PLATFORM=xcb` to the commands.
+
+### Docker
+
+```
+yay -S docker
+systemctl enable docker.service
+```
 
 ## Dotfiles Config Setup
 
