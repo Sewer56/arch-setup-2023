@@ -26,6 +26,7 @@ This is a log of installation steps to set up Arch on my machine; as well as my 
     - [Archive Manager (Optional)](#archive-manager-optional)
     - [GTK Settings Editor](#gtk-settings-editor)
     - [Autologin](#autologin)
+    - [Hex Editor](#hex-editor)
   - [Dotfiles Config Setup](#dotfiles-config-setup)
     - [Install GTK Theme (Catpuccin)](#install-gtk-theme-catpuccin)
     - [Configure WM (hyprland)](#configure-wm-hyprland)
@@ -342,6 +343,19 @@ ExecStart=-/usr/bin/agetty --autologin sewer --noclear %I $TERM
 ```
 sudo systemctl enable getty@tty1.service
 ```
+
+### Hex Editor
+
+```
+yay -S 010editor
+```
+
+Sometimes it fails in Wayland, x11 mode will work, edit:  
+- `~/.local/share/applications/010editor.desktop`  
+- `~/.local/share/applications/010editor-project.desktop`  
+- `~/.local/share/applications/010editor-import.desktop`  
+
+And prepend `env QT_QPA_PLATFORM=xcb` to the commands.
 
 ## Dotfiles Config Setup
 
