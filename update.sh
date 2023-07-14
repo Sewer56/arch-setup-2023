@@ -19,7 +19,7 @@ for src_dir_path in "$src_dir"/*; do
         # check if the destination directory exists
         if [ -d "$dst_dir_path" ]; then
             # if it does, copy all the files in the source subdirectory to the destination
-            cp -r "$src_dir_path"/* "$dst_dir_path"
+            cp -rT "$src_dir_path" "$dst_dir_path"
             echo "cp \"$src_dir_path\" \"$dst_dir_path\""
         fi
     fi
