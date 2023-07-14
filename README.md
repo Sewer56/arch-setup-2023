@@ -364,6 +364,9 @@ And prepend `env QT_QPA_PLATFORM=xcb` to the commands.
 ```
 yay -S docker
 systemctl enable docker.service
+
+# Add user to docker group
+sudo usermod -aG docker ${USER}
 ```
 
 ### Mount Cloud Storage
