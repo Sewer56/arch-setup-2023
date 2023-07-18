@@ -20,7 +20,7 @@ This is a log of installation steps to set up Arch on my machine; as well as my 
     - [Install IDE (.NET)](#install-ide-net)
     - [Keyboard Lighting (Corsair)](#keyboard-lighting-corsair)
     - [Mouse Config (Universal)](#mouse-config-universal)
-    - [Configure Swap](#configure-swap)
+    - [Configure ZRam](#configure-zram)
     - [File Managers](#file-managers)
     - [Fix Screen Capture on Chrome](#fix-screen-capture-on-chrome)
     - [Archive Manager (Optional)](#archive-manager-optional)
@@ -269,7 +269,9 @@ pacman -S piper
 piper
 ```
 
-### Configure Swap
+### Configure ZRam
+
+i.e. Compressed RAM
 
 ```bash
 # https://wiki.archlinux.org/title/Zram#:~:text=zram%2C%20formerly%20called%20compcache%2C%20is,a%20general-purpose%20RAM%20disk.
@@ -278,7 +280,6 @@ pacman -S zram-generator # might be already insatalled depending on archinstall 
 
 # Open
 sudo nano /etc/systemd/zram-generator.conf
-zram-size = ram
 compression-algorithm = zstd
 swap-priority = 100
 fs-type = swap
