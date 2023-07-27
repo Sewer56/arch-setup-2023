@@ -8,7 +8,8 @@
   "margin-right": 0,
   "modules-left": [
     "custom/launcher",
-    "wlr/workspaces"
+    "wlr/workspaces",
+    "network#speed"
   ],
   "modules-center": [
     "disk",
@@ -130,7 +131,15 @@
     "format-linked": "<big></big> (No IP)",
     "format-disconnected": "<big>󰤭</big>",
     "format-alt": "<big></big> {ipaddr}/{cidr}",
-    "tooltip-format": "{essid}",
+    "tooltip-format": "{essid} | {bandwidthDownBytes} / {bandwidthUpBytes}",
+    "on-click-right": "nm-connection-editor"
+  },
+  "network#speed": {
+    "format-wifi": "{bandwidthDownBytes} / {bandwidthUpBytes}",
+    "format-ethernet": "{bandwidthDownBytes} / {bandwidthUpBytes}",
+    "format-linked": "{bandwidthDownBytes} / {bandwidthUpBytes}",
+    "format-disconnected": "{bandwidthDownBytes} / {bandwidthUpBytes}",
+    "interval": 1,
     "on-click-right": "nm-connection-editor"
   },
   "tray": {
