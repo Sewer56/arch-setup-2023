@@ -226,7 +226,7 @@ pacman -S btop
 ### Install Browser
 
 ```bash
-pacman -S vivaldi
+yay -S pulse-browser-bin
 ```
 
 ### Install Bragging Rights (Neofetch)
