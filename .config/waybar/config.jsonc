@@ -8,7 +8,7 @@
   "margin-right": 0,
   "modules-left": [
     "custom/launcher",
-    "wlr/workspaces",
+    "hyprland/workspaces",
     "network#speed"
   ],
   "modules-center": [
@@ -32,7 +32,7 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "<big></big>  {:%d/%m}"
   },
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
     "active-only": false,
     "all-outputs": false,
     "disable-scroll": false,
