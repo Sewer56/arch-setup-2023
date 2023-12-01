@@ -30,6 +30,7 @@ This is a log of installation steps to set up Arch on my machine; as well as my 
     - [Docker](#docker)
     - [Mount Cloud Storage](#mount-cloud-storage)
     - [Mount NAS Storage](#mount-nas-storage)
+    - [JPEG XL Support](#jpeg-xl-support)
   - [Dotfiles Config Setup](#dotfiles-config-setup)
     - [Install GTK Theme (Catpuccin)](#install-gtk-theme-catpuccin)
     - [Configure WM (hyprland)](#configure-wm-hyprland)
@@ -387,10 +388,21 @@ mkdir ~/Cloud
 ### Mount NAS Storage
 
 ```
-pacman -S curlftpfs
+pacman -S rclone
+rclone config
+
+# Mount that service
+mkdir ~/Cloud
 
 # Mount Command in
 # .config/hypr/nas.conf
+```
+
+
+### JPEG XL Support
+
+```bash
+yay -S libjxl
 ```
 
 ## Dotfiles Config Setup
