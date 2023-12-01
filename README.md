@@ -29,6 +29,7 @@ This is a log of installation steps to set up Arch on my machine; as well as my 
     - [Hex Editor](#hex-editor)
     - [Docker](#docker)
     - [Mount Cloud Storage](#mount-cloud-storage)
+    - [Mount NAS Storage](#mount-nas-storage)
   - [Dotfiles Config Setup](#dotfiles-config-setup)
     - [Install GTK Theme (Catpuccin)](#install-gtk-theme-catpuccin)
     - [Configure WM (hyprland)](#configure-wm-hyprland)
@@ -381,6 +382,15 @@ mkdir ~/Cloud
 
 # Mount command in 
 # .config/hypr/cloud.conf
+```
+
+### Mount NAS Storage
+
+```
+pacman -S curlftpfs
+
+# Mount Command in
+# .config/hypr/nas.conf
 ```
 
 ## Dotfiles Config Setup
