@@ -398,7 +398,6 @@ mkdir ~/Cloud
 # .config/hypr/nas.conf
 ```
 
-
 ### JPEG XL Support
 
 ```bash
@@ -434,7 +433,9 @@ Screenshots:
 
 ```bash
 # .config/hypr/screenshot.conf
-# Bound to Print Screen, saves to 'Pictures' folder.
+# Saves to my 'Cloud' directory. You may need to adjust that.
+# Print Screen: Screenshot Region
+# Alt + Print Screen: Screenshot Current Window
 yay -S grim slurp 
 ```
 
