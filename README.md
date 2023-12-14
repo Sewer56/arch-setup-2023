@@ -20,7 +20,8 @@ This is a log of installation steps to set up Arch on my machine; as well as my 
     - [Install IDE (.NET)](#install-ide-net)
     - [Keyboard Lighting (Corsair)](#keyboard-lighting-corsair)
     - [Mouse Config (Universal)](#mouse-config-universal)
-    - [Configure ZRam](#configure-zram)
+    - [Configure Swap (Optional)](#configure-swap-optional)
+    - [Configure ZRam (Optional)](#configure-zram-optional)
     - [File Managers](#file-managers)
     - [Fix Screen Capture on Chrome](#fix-screen-capture-on-chrome)
     - [Archive Manager (Optional)](#archive-manager-optional)
@@ -271,14 +272,30 @@ pacman -S piper
 piper
 ```
 
-### Configure ZRam
+### Configure Swap (Optional)
 
-i.e. Compressed RAM
+Also allows hibernation.
+
+```bash
+sudo btrfs subvolume create /swap
+
+# For 32GB RAM, using Ubuntu Recommendation that also covers hibernation.
+sudo btrfs filesystem mkswapfile --size 38g --uuid clear /swap/swapfile
+
+sudo swapon /swap/swapfile
+
+## Add to fstab
+# /swap/swapfile none swap defaults 0 0
+```
+
+### Configure ZRam (Optional)
+
+i.e. Compressed RAM. Optionally use instead of swap if you have enough RAM.
 
 ```bash
 # https://wiki.archlinux.org/title/Zram#:~:text=zram%2C%20formerly%20called%20compcache%2C%20is,a%20general-purpose%20RAM%20disk.
 # Disable zswap if needed first.
-pacman -S zram-generator # might be already insatalled depending on archinstall config
+sudo pacman -S zram-generator # might be already insatalled depending on archinstall config
 
 # Open
 sudo nano /etc/systemd/zram-generator.conf
