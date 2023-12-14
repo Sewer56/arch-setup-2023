@@ -33,11 +33,12 @@ mkdir -p "$screenshot_directory"
 screenshot_file="${screenshot_directory}/${current_time}_${sanitized_title}.png"
 
 # Take a screenshot with grim of the current window
+# Set l == 0 if using JpegXL
 echo $geometry
-grim -l 0 -g "$geometry" "$screenshot_file"
+grim -l 9 -g "$geometry" "$screenshot_file"
 
 # Convert the screenshot to JPEG-XL using cjxl
-cjxl "$screenshot_file" "${screenshot_file%.png}.jxl"
+# cjxl "$screenshot_file" "${screenshot_file%.png}.jxl"
 
 # Optionally, remove the original PNG file
-rm "$screenshot_file"
+# rm "$screenshot_file"

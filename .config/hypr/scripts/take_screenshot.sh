@@ -15,10 +15,12 @@ mkdir -p "$screenshot_directory"
 screenshot_file="${screenshot_directory}/${current_time}.png"
 
 # Take a screenshot with grim and slurp
-grim -l 0 -g "$(slurp)" "$screenshot_file"
+# Set l == 0 if using JpegXL
+grim -l 9 -g "$(slurp)" "$screenshot_file"
 
+# Uncomment below for JpegXL
 # Convert the screenshot to JPEG-XL using cjxl
-cjxl "$screenshot_file" "${screenshot_file%.png}.jxl"
+# cjxl "$screenshot_file" "${screenshot_file%.png}.jxl"
 
 # Optionally, remove the original PNG file
-rm "$screenshot_file"
+# rm "$screenshot_file"

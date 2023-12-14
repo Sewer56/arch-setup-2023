@@ -421,6 +421,8 @@ mkdir ~/Cloud
 yay -S libjxl
 ```
 
+Modify the `*screenshot.sh` scripts to make JXL screenshots if desired.
+
 ## Dotfiles Config Setup
 
 RGBA
