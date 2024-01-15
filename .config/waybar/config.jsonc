@@ -16,7 +16,6 @@
     "custom/playerlabel"
   ],
   "modules-right": [
-    "custom/playerctl",
     "cpu",
     "memory",
     "tray",
