@@ -538,7 +538,7 @@ systemctl enable fstrim.timer
 Clipboard Manager:
 
 ```bash
-pacman -S clipmenu
+pacman -S cliphist
 
 #.config/hypr/clipboard.conf
 ```
