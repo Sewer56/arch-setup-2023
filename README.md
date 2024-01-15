@@ -575,6 +575,9 @@ pacman -S zsh
 # We will import Oh My Zsh through a script.
 ```
 
+Also consider installing autosuggestions:
+https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
+
 ## Deploy the Configurations
 
 Copies the dotfiles, makes zsh default shell, changes shell to zsh:
