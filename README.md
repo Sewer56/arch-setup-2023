@@ -257,6 +257,8 @@ yay -S aur/rider
 yay -S dotnet-sdk-7.0
 ```
 
+In Rider, set VM option `-Dsun.java2d.uiScale.enabled=false`.
+
 ### Keyboard Lighting (Corsair)
 
 ```bash
@@ -311,7 +313,7 @@ systemctl enable systemd-zram-setup@zram0.service
 
 ```bash
 yay -S thunar # tumbler for thumbs
-yay -S polkit-gnome # Required for auth which is required for mounting drives
+yay -S polkit-kde-agent # Required for auth which is required for mounting drives
 yay -S thunar-archive-plugin # archive files
 yay -S thunar-media-tags-plugin # id3 tags
 yay -S tumbler-extra-thumbnailers # dds and some other useful stuff
@@ -462,7 +464,7 @@ Notification Service:
 
 ```bash
 # .config/hypr/notification.conf
-yay -S dunst
+yay -S mako
 ```
 
 Media Keys:
@@ -525,7 +527,7 @@ yay -S udiskie # daemon
 
 # Mount
 # .config/hypr/mount.conf
-yay -S polkit-gnome # requisite
+yay -S polkit-kde-agent # requisite
 
 # File Manager Support
 yay -S gvfs
