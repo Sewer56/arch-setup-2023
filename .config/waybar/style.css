@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: VictorMono, Iosevka Nerd Font, Noto Sans CJK;
+    font-family: Iosevka Nerd Font, FontAwesome, Noto Sans CJK;
     /*font-family: Iosevka, FontAwesome, Noto Sans CJK;*/
     font-size: 14px;
     font-style: normal;
@@ -17,12 +17,13 @@ window#waybar {
 #workspaces {
 	background: #282828;
 	margin: 5px 5px 5px 5px;
-  padding: 0px 5px 0px 5px;
+    padding: 0px 5px 0px 5px;
 	border-radius: 16px;
-  border: solid 0px #a2cce0;
-  font-weight: normal;
-  font-style: normal;
+    border: solid 0px #a2cce0;
+    font-weight: normal;
+    font-style: normal;
 }
+
 #workspaces button {
     padding: 0px 5px;
     border-radius: 16px;
@@ -41,12 +42,16 @@ window#waybar {
 	border-radius: 16px;
 }
 
+#network.speed {
+    font-size: larger;
+}
+
 #custom-date, #clock, #battery, #pulseaudio, #network, #custom-randwall, #custom-launcher {
 	background: transparent;
 	padding: 5px 5px 5px 5px;
 	margin: 5px 5px 5px 5px;
-  border-radius: 8px;
-  border: solid 0px #a2cce0;
+    border-radius: 8px;
+    border: solid 0px #a2cce0;
 }
 
 #custom-date {
@@ -117,10 +122,12 @@ window#waybar {
     margin-right: 5px;
 }
 
-#pulseaudio {
+#pulseaudio, #network.ip, #custom-randwall {
     color: #a2cce0;
     border-radius: 8px;
     margin-left: 0px;
+    font-size: larger;
+    margin: 0px 5px 0px 5px
 }
 
 #pulseaudio.muted {
@@ -134,6 +141,16 @@ window#waybar {
     color: #a2cce0;
     border-radius: 8px;
     margin-right: 0px;
+}
+
+#custom-power {
+    color: #00ff99;
+    background-color: #282828;
+    border-radius: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    padding: 0 20px 0 13px;
+    /*border-right: solid 1px #282738;*/
+    font-size: 20px;
 }
 
 #custom-launcher {
@@ -181,6 +198,7 @@ window#waybar {
     margin-bottom: 5px;
     font-weight: normal;
     font-style: normal;
+    font-size: larger;
 }
 
 #window {

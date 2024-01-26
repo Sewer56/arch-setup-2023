@@ -20,17 +20,17 @@
     "memory",
     "tray",
     "custom/randwall",
-    "network",
+    "network#ip",
     "pulseaudio",
-    "clock"
+    "clock",
+    "custom/power"
   ],
-  // Modules configurations
-  "clock": {
-    "format": "<big></big>  {:%H:%M}",
-    "tooltip": "true",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "<big></big>  {:%d/%m}"
+  // == LEFT ITEMS == //
+  "custom/launcher": {
+    "format": "<big>󰈸</big>",
+    "on-click": "killall rofi || rofi -show drun -theme ~/.config/rofi/config.rasi"
   },
+
   "hyprland/workspaces": {
     "active-only": false,
     "all-outputs": false,
@@ -40,13 +40,13 @@
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
-      "1": "1.   Web",
-      "2": " Discord",
-      "3": "  Slack",
-      "4": "  Matrix",
-      "5": "5.   Code",
-      "6": "  Git",
-      "7": "  Music",
+      "1": "1. <big></big>  Web",
+      "2": "<big>󰙯</big>  Discord",
+      "3": "<big></big>  Slack",
+      "4": "<big></big>  Matrix",
+      "5": "5. <big></big>  Code",
+      "6": "<big></big>  Git",
+      "7": "<big></big>  Music",
       
       "urgent": "<big></big>",
       "default": "<big>󰧞</big>",
@@ -62,6 +62,18 @@
       "7": ["DVI-D-1"]
   }
   },
+
+  "network#speed": {
+    "format-wifi": "{bandwidthDownBytes} / {bandwidthUpBytes}",
+    "format-ethernet": "{bandwidthDownBytes} / {bandwidthUpBytes}",
+    "format-linked": "{bandwidthDownBytes} / {bandwidthUpBytes}",
+    "format-disconnected": "{bandwidthDownBytes} / {bandwidthUpBytes}",
+    "interval": 1,
+    "on-click-right": "nm-connection-editor"
+  },
+
+  // == CENTER ITEMS == //
+
   "custom/playerctl": {
     "format": "{icon}",
     "return-type": "json",
@@ -124,23 +136,16 @@
     "interval": 5,
     "path": "/mnt/Datos"
   },
-  "network": {
+  "network#ip": {
     "format-wifi": "<big>󰤨</big>",
-    "format-ethernet": "<big></big> Aesthetic",
+    "format-ethernet": "<big>󰈀</big>  Aesthetic",
     "format-linked": "<big></big> (No IP)",
     "format-disconnected": "<big>󰤭</big>",
-    "format-alt": "<big></big> {ipaddr}/{cidr}",
+    "format-alt": "<big>󰈀</big>  {ipaddr}/{cidr}",
     "tooltip-format": "{essid} | {bandwidthDownBytes} / {bandwidthUpBytes}",
     "on-click-right": "nm-connection-editor"
   },
-  "network#speed": {
-    "format-wifi": "{bandwidthDownBytes} / {bandwidthUpBytes}",
-    "format-ethernet": "{bandwidthDownBytes} / {bandwidthUpBytes}",
-    "format-linked": "{bandwidthDownBytes} / {bandwidthUpBytes}",
-    "format-disconnected": "{bandwidthDownBytes} / {bandwidthUpBytes}",
-    "interval": 1,
-    "on-click-right": "nm-connection-editor"
-  },
+
   "tray": {
     "icon-size": 16,
     "spacing": 5
@@ -186,16 +191,24 @@
     "on-click-right": "bash $HOME/.config/hypr/scripts/default_wallpaper.sh",
     "tooltip": "Left Click for Random Wall, Right Click for Default Wall"
   },
-  "custom/launcher": {
-    "format": "<big>󰈸</big>",
-    "on-click": "killall rofi || rofi -show drun -theme ~/.config/rofi/config.rasi"
-    //    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",
-    //    "on-click-right": "bash $HOME/.config/rofi/run.sh"  
-    //    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css"  
-  },
   "custom/hyprpicker": {
     "format": "<big>󰈋</big>",
     "on-click": "hyprpicker -a -f hex",
     "on-click-right": "hyprpicker -a -f rgb"
+  },
+
+  // Clock: Second last from right
+  "clock": {
+    "format": "<big></big>  {:%H:%M}",
+    "tooltip": "true",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "<big></big>  {:%d/%m}"
+  },
+
+  // Power: Last on right.
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "wlogout"
   }
 }
