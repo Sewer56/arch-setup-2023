@@ -313,7 +313,7 @@ systemctl enable systemd-zram-setup@zram0.service
 
 ```bash
 yay -S thunar # tumbler for thumbs
-yay -S polkit-kde-agent # Required for auth which is required for mounting drives
+yay -S polkit-gnome # Required for auth which is required for mounting drives
 yay -S thunar-archive-plugin # archive files
 yay -S thunar-media-tags-plugin # id3 tags
 yay -S tumbler-extra-thumbnailers # dds and some other useful stuff
@@ -527,7 +527,7 @@ yay -S udiskie # daemon
 
 # Mount
 # .config/hypr/mount.conf
-yay -S polkit-kde-agent # requisite
+yay -S polkit-gnome # requisite
 
 # File Manager Support
 yay -S gvfs

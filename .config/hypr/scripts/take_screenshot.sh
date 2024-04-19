@@ -6,7 +6,13 @@ current_time=$(date +"%Y%m%d_%Hh%Mm%Ss")
 # Define the directory to store screenshots
 year=$(date +%Y)
 month=$(date +%m)
-screenshot_directory="$HOME/Cloud/Images/ShareX/Screenshots/${year}-${month}"
+
+# Check if Cloud directory exists
+if [ -d "$HOME/Cloud" ]; then
+    screenshot_directory="$HOME/Cloud/Images/ShareX/Screenshots/${year}-${month}"
+else
+    screenshot_directory="$HOME/Pictures/Screenshots/${year}-${month}"
+fi
 
 # Create the directory if it doesn't exist
 mkdir -p "$screenshot_directory"

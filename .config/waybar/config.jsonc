@@ -47,19 +47,21 @@
       "5": "5. <big></big>  Code",
       "6": "<big></big>  Git",
       "7": "<big></big>  Music",
+      "8": "<big></big>  Mail",
       
       "urgent": "<big></big>",
       "default": "<big>󰧞</big>",
       "sort-by-number": true
     },
     "persistent_workspaces": {
-      "1": ["DP-1"],
-      "2": ["DP-1"],
-      "3": ["DP-1"],
-      "4": ["DP-1"],
+      "1": ["DP-3"],
+      "2": ["DP-3"],
+      "3": ["DP-3"],
+      "4": ["DP-3"],
       "5": ["DVI-D-1"],
       "6": ["DVI-D-1"],
-      "7": ["DVI-D-1"]
+      "7": ["DVI-D-1"],
+      "8": ["DVI-D-1"]
   }
   },
 
