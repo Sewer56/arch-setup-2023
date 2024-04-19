@@ -28,5 +28,14 @@ grim -l 9 -g "$(slurp)" "$screenshot_file"
 # Convert the screenshot to JPEG-XL using cjxl
 # cjxl "$screenshot_file" "${screenshot_file%.png}.jxl"
 
+# Show notification
+# Get file size
+if [ -f "$screenshot_file" ]
+then
+    file_size=$(du -h "$screenshot_file" | cut -f1)
+    file_name=$(basename "$screenshot_file")
+    notify-send "Screenshot taken" "File: $file_name\nSize: $file_size"
+fi
+
 # Optionally, remove the original PNG file
 # rm "$screenshot_file"

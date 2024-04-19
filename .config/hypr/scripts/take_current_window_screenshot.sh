@@ -24,7 +24,17 @@ current_time=$(date +"%Y%m%d_%Hh%Mm%Ss")
 # Define the directory to store screenshots
 year=$(date +%Y)
 month=$(date +%m)
-screenshot_directory="$HOME/Cloud/Images/ShareX/Screenshots/${year}-${month}"
+cloud_directory="$HOME/Cloud/Images/ShareX/Screenshots/${year}-${month}"
+local_directory="$HOME/Pictures/Screenshots/${year}-${month}"
+
+# Check if Cloud directory exists
+if [ -d "$HOME/Cloud" ]; then
+    # Use Cloud directory
+    screenshot_directory="$cloud_directory"
+else
+    # Use local directory
+    screenshot_directory="$local_directory"
+fi
 
 # Create the directory if it doesn't exist
 mkdir -p "$screenshot_directory"
@@ -39,6 +49,15 @@ grim -l 9 -g "$geometry" "$screenshot_file"
 
 # Convert the screenshot to JPEG-XL using cjxl
 # cjxl "$screenshot_file" "${screenshot_file%.png}.jxl"
+
+# Show notification
+# Get file size
+if [ -f "$screenshot_file" ]
+then
+    file_size=$(du -h "$screenshot_file" | cut -f1)
+    file_name=$(basename "$screenshot_file")
+    notify-send "Screenshot taken" "File: $file_name\nSize: $file_size"
+fi
 
 # Optionally, remove the original PNG file
 # rm "$screenshot_file"
