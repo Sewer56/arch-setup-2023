@@ -57,6 +57,7 @@ then
     file_size=$(du -h "$screenshot_file" | cut -f1)
     file_name=$(basename "$screenshot_file")
     notify-send "Screenshot taken" "File: $file_name\nSize: $file_size"
+    wl-copy < "$screenshot_file"
 fi
 
 # Optionally, remove the original PNG file
