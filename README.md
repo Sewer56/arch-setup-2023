@@ -127,13 +127,13 @@ nano /boot/loader/entries/...conf
 
 Add the following to options:
 - `nvidia_drm.modeset=1` (needed for Wayland)
-- `NVreg_PreserveVideoMemoryAllocations=1` (needed for suspend in Wayland)
+- `nvidia.NVreg_PreserveVideoMemoryAllocations=1` (needed for suspend in Wayland)
 - `mitigations=off` (optional, sacrifices security for perf)
 
 Line should look something like:
 
 ```
-options /* some stuff here */ nvidia_drm.modeset=1 mitigations=off nvidia.
+options /* some stuff here */ nvidia_drm.modeset=1 mitigations=off nvidia.NVreg_PreserveVideoMemoryAllocations=1
 ```
 
 And rebuild dkms...
