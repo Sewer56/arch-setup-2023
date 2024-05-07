@@ -7,5 +7,5 @@
         sleep 1
     done
 
-    rclone mount NAS: NAS --vfs-cache-mode full --vfs-cache-min-free-space 10Gi &
+    rclone mount NAS: NAS --vfs-cache-mode full --vfs-cache-min-free-space 10Gi --fast-list &
 } &> /tmp/boot-nas.txt &
