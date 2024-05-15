@@ -9,17 +9,14 @@ fi
 # Full path to the wallpaper
 wallpaper_path="$1"
 
+# Clear previous wallpapers
+hyprctl hyprpaper unload all
+
 # Preload the wallpaper
 hyprctl hyprpaper preload "$wallpaper_path"
 
 # Set the wallpaper (every monitor)
-hyprctl -j monitors | python3 -c "
-import sys, json
-for item in json.load(sys.stdin):
-    print(item['name'])
-" | while read NAME; do
-    hyprctl hyprpaper wallpaper "${NAME},$wallpaper_path"
+for monitor in $(hyprctl monitors | grep 'Monitor' | awk '{ print $2 }'); do
+    echo $monitor
+    hyprctl hyprpaper wallpaper "$monitor,$wallpaper_path"
 done
-
-# Clear previous wallpapers
-hyprctl hyprpaper unload all
