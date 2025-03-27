@@ -201,7 +201,7 @@
 
   // Clock: Second last from right
   "clock": {
-    "format": "<big></big>  {:%H:%M}",
+    "format": "<big></big>  {:%a %d %b <big></big>  %H:%M}",	//24 hour format
     "tooltip": "true",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "<big></big>  {:%d/%m}"
