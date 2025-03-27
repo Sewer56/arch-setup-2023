@@ -1,4 +1,3 @@
-ipc_socket = false
 
 [window]
 padding = { x = 15, y = 15 }
@@ -84,3 +83,6 @@ blue = '#89B4FA' # blue
 magenta = '#F5C2E7' # pink
 cyan = '#94E2D5' # teal
 white = '#BAC2DE' # subtext1
+
+[general]
+ipc_socket = false
