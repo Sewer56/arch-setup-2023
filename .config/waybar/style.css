@@ -1,6 +1,6 @@
 * {
     border: none;
-    border-radius: 0px;
+    border-radius: 20px;
     font-family: Iosevka Nerd Font, FontAwesome, Noto Sans CJK;
     /*font-family: Iosevka, FontAwesome, Noto Sans CJK;*/
     font-size: 14px;
@@ -80,7 +80,6 @@ window#waybar {
 #clock {
     color: #a9ceb5;
     background-color: #282828;
-    border-radius: 0px 0px 0px 24px;
     padding-left: 13px;
     padding-right: 15px;
     margin-right: 0px;
@@ -199,6 +198,7 @@ window#waybar {
     font-weight: normal;
     font-style: normal;
     font-size: larger;
+    min-width: 500px;
 }
 
 #window {
