@@ -10,8 +10,9 @@ layer=top
 font=Sarasa UI SC 10
 border-radius=7
 max-icon-size=48
-default-timeout=10000
-anchor=top-right
+default-timeout=20000
+anchor=top-center
+outer-margin=30
 margin=20
 
 [urgency=high]
