@@ -1,29 +1,25 @@
 {
-  "position": "top",
+  "position": "bottom",
   "layer": "top",
+  "mode": "hide",
+  "width": 2,
   "height": 16,
   "margin-top": 0,
   "margin-bottom": 0,
   "margin-left": 0,
   "margin-right": 0,
-  "modules-left": [
-    "custom/launcher",
-    "hyprland/workspaces",
-    "network#speed"
-  ],
   "modules-center": [
-    "disk",
-    "custom/playerlabel"
-  ],
-  "modules-right": [
+    "hyprland/workspaces",
     "cpu",
     "memory",
+    // "network#speed",
+    "disk",
+    "custom/playerlabel",
     "tray",
     "custom/randwall",
-    "network#ip",
+    // "network#ip",
     "pulseaudio",
-    "clock",
-    "custom/power"
+    "clock"
   ],
   // == LEFT ITEMS == //
   "custom/launcher": {
@@ -40,29 +36,16 @@
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
-      "1": "1. <big></big>  Web",
-      "2": "<big>󰙯</big>  Discord",
-      "3": "<big></big>  Slack",
-      "4": "<big></big>  Matrix",
-      "5": "5. <big></big>  Code",
-      "6": "<big></big>  Git",
-      "7": "<big></big>  Music",
-      "8": "<big></big>  Mail",
+      "1": "1. <big></big>  Code",
+      "2": "<big></big>  Code-2",
+      "3": "<big>󰙯</big>  Comms",
+      "4": "<big></big>  Misc",
+      "5": "<big></big>  Game",
       
       "urgent": "<big></big>",
       "default": "<big>󰧞</big>",
       "sort-by-number": true
-    },
-    "persistent_workspaces": {
-      "1": ["DP-3"],
-      "2": ["DP-3"],
-      "3": ["DP-3"],
-      "4": ["DP-3"],
-      "5": ["DVI-D-1"],
-      "6": ["DVI-D-1"],
-      "7": ["DVI-D-1"],
-      "8": ["DVI-D-1"]
-  }
+    }
   },
 
   "network#speed": {
