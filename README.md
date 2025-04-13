@@ -400,13 +400,14 @@ rclone config
 # Mount that service
 mkdir ~/Cloud
 
-# Mount command in 
+# Mount Command in 
 # .config/hypr/cloud.conf
 ```
 
 ### Mount NAS Storage
 
-```
+For cloud storage:
+```bash
 pacman -S rclone
 rclone config
 
@@ -415,6 +416,24 @@ mkdir ~/Cloud
 
 # Mount Command in
 # .config/hypr/nas.conf
+```
+
+For NFS shares:
+```bash
+# Install NFS client utilities
+sudo pacman -S nfs-utils
+
+# Create mount point
+mkdir -p ~/NAS
+
+# Test mount command
+sudo mount -t nfs 192.168.1.125:/mnt ~/NAS
+
+# To mount automatically on startup, add the following line to /etc/fstab:
+# 192.168.1.125:/mnt    /home/username/NAS    nfs    defaults,_netdev,auto    0    0
+
+# Edit fstab
+sudo nano /etc/fstab
 ```
 
 ### JPEG XL Support
@@ -598,5 +617,4 @@ This shell script copies all the files from the current user's `.config` into th
 i.e. If `.config/i3` exists, it will copy all of `$HOME/.config/i3`.
 
 ```bash
-./update.sh
-```
+./update.sh```
